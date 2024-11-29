@@ -29,14 +29,7 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Start Application in Background
-        run: |
-          nohup npm start &  # Start the application in the background
-          sleep 10  # Wait for the application to start (adjust based on your app's start time)
-
       - name: Run Unit Tests
         run: npm test -- --verbose  # Run the tests
 
-      - name: Clean up Application Process
-        run: |
-          kill $(ps aux | grep 'npm start' | awk '{print $1}')  # Kill the app after the tests finish
+
