@@ -8,7 +8,7 @@ on:
       - 'feature/*'
 
 env:
-  MONGO_URI: 'mongodb+srv://mycluster.9yzmp.mongodb.net/'
+  MONGO_URI: 'mongodb+srv://mycluster.9yzmp.mongodb.net/test'
   MONGO_USERNAME: ${{ vars.MONGO_USERNAME }}
   MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
 
