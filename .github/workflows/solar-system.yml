@@ -1,36 +1,3 @@
-# name: Solar System Workflow
-# on:
-#   workflow_dispatch:
-#   push:
-#     branches:
-#       - main
-#       - 'feature/*'
-
-# env:
-#   MONGO_URI: 'mongodb+srv://mycluster.9yzmp.mongodb.net/'
-#   MONGO_USERNAME: ${{ vars.MONGO_USERNAME }}
-#   MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
-
-# jobs:
-#   unit-testing:
-#     name: Unit Testing
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout Repository
-#         uses: actions/checkout@v4
-
-#       - name: Setup NodeJS Version - 18
-#         uses: actions/setup-node@v4
-#         with:
-#           node-version: 18
-
-#       - name: Install Dependencies
-#         run: npm install
-
-#       - name: Unit testing
-#         run: npm test -- --verbose
-
-        
 name: Solar System Workflow
 
 on:
@@ -49,14 +16,6 @@ jobs:
   unit-testing:
     name: Unit Testing
     runs-on: ubuntu-latest
-
-    services:
-      # Setup MongoDB container service if your app depends on it
-      mongodb:
-        image: mongo:latest
-        ports:
-          - 27017:27017  # Expose MongoDB on port 27017
-        options: --health-cmd="curl --silent --fail localhost:27017" --health-interval=30s --health-timeout=30s --health-retries=5
 
     steps:
       - name: Checkout Repository
