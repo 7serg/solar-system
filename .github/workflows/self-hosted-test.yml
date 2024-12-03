@@ -1,0 +1,20 @@
+name: Test self hosted runner
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - 'feature/*'
+
+
+jobs:
+  testing:
+    name: Test runner
+    runs-on: [self-hosted, Linux, X64, prod, main, test]
+    steps:
+        - name: Hello to runner
+          run: |
+            pwd
+            hostname
+            echo 'Hello World'
